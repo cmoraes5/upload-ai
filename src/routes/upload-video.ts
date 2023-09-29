@@ -40,7 +40,7 @@ export async function uploadVideoRoute(app: FastifyInstance) {
         name: data.filename,
         path: uploadDestination
       }
-    })
+    });
 
     return {
       video
