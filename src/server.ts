@@ -8,8 +8,7 @@ import { generateAICompletionRoute } from "./routes/generate-ai-completion";
 const app = fastify()
 
 app.register(fastifyCors, {
-  // origin: '*',
-  origin: '*',
+  origin: 'https://upload-ai-web-nu.vercel.app/',
 })
 
 app.register(getAllPromptsRoute)
@@ -19,7 +18,8 @@ app.register(generateAICompletionRoute)
 
 app.listen({
   host: '0.0.0.0',
-  port: 3333,
+  port: process.env.PORT || 3333,
+  // for render
 }).then(() => {
   console.log('HTTP Server Running!')
 })
